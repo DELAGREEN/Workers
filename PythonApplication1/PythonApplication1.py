@@ -16,6 +16,7 @@ def privet():
 
 data = []
 addres = []
+dept = [] 
 
 #Добавление работников
 def vjob():
