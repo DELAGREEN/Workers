@@ -35,14 +35,15 @@ def vjob():
 
 #Вывод всех элементов из списка сотрудников
 def how_many_workers():
+    print(p+"ФИО Работника"+p+"Место жительства")
     data_len = len(data)
+    addres_len = len(addres)
     i=0
-    while i < data_len:
-        print(data[i])
+    j=0
+    while i < data_len and addres_len:
+        print(p,data[i], p,addres[j])
         i+=1
-
-
-
+        j+=1
 
 
 while True:
@@ -75,4 +76,3 @@ while True:
         print(p+"Ощибка, команды не существуюет")
 
  
-       
