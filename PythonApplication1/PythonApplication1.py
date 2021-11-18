@@ -42,8 +42,16 @@ def vjob():
     print(*addres)
     return 0
 
+#Вывод работников и отделов
+def how_workers_in_office():
+    print(p+"ФИО Работника"+p+"Отдел")
+    data_len = len(data)
+    i=0
+    while i < data_len:
+        print(p,data[i])
+        i+=1
 
-#Вывод всех элементов из списка сотрудников
+#Вывод всех элементов из списка сотрудников с местом жительства
 def how_many_workers():
     print(p+"ФИО Работника"+p+"Место жительства")
     data_len = len(data)
@@ -77,6 +85,7 @@ while True:
        
     elif console_input == 3:
 
+        how_workers_in_office()
         print(*data)
         print(data)
         
