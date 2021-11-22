@@ -38,8 +38,8 @@ def vjob():
     addres.append(pre_addres)
 
 
-    print(*data)
-    print(*addres)
+    #print(*data)
+    #print(*addres)
     return 0
 
 
@@ -81,10 +81,9 @@ while True:
         
         index = data.index(str(input("Введите того кого ищите: ")))
         #print(len(data))
-        #print(index)
+        print(index)
         how_many_workers()
 
-        print("2")
        
     elif console_input == 3:
 
