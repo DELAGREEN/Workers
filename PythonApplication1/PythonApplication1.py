@@ -43,6 +43,17 @@ def vjob():
     return 0
 
 
+#Вывод таблицы работников
+
+def del_table_workers():
+    print(p+"Порядковый номер")
+    data_len = len(data)
+    addres_len = len(addres)
+    i=0
+    while i < data_len:
+        print(i,p,data[i])
+        i+=1
+
 #Вывод всех элементов из списка сотрудников
 def how_many_workers():
     print(p+"ФИО Работника"+p+"Место жительства")
@@ -69,16 +80,17 @@ while True:
     elif console_input == 2:
         
         index = data.index(str(input("Введите того кого ищите: ")))
-        print(len(data))
-        print(index)
+        #print(len(data))
+        #print(index)
         how_many_workers()
 
         print("2")
        
     elif console_input == 3:
 
-        print(*data)
-        print(data)
+        del_table_workers()
+        #print(*data)
+        #print(data)
         
 
 
