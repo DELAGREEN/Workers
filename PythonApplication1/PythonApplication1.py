@@ -42,6 +42,19 @@ def vjob():
     #print(*addres)
     return 0
 
+def app_dept_worker():
+    del_table_workers()
+    app_dept = int(input("Введите порядковый номер подразделения: "))
+    while True:
+        if app_dept == 1:
+            print("1")
+        elif app_dept == 2:
+            print("2")
+        elif app_dept == 3:
+            print("3")
+        else:
+            print("Ошибка команды")
+        return 0
 
 #Вывод таблицы работников
 
@@ -81,13 +94,14 @@ while True:
         
         index = data.index(str(input("Введите того кого ищите: ")))
         #print(len(data))
-        print(index)
+        #print(index)
         how_many_workers()
 
        
     elif console_input == 3:
 
         del_table_workers()
+        app_dept_worker()
         #print(*data)
         #print(data)
         
