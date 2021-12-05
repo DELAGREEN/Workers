@@ -3,7 +3,7 @@ s = '*'*3
 p = ' '*10
 # end
 
-
+#Приветствие
 def privet():
     print(p+'*'*50)
     print(p+s+"Приветствую в программе: Работники отдела!!"+s)
@@ -38,20 +38,21 @@ def vjob():
     addres.append(pre_addres)
 
 
-    print(*data)
-    print(*addres)
+    #print(*data)
+    #print(*addres)
     return 0
 
 
 #Вывод всех элементов из списка сотрудников
 def how_many_workers():
-    print(p+"ФИО Работника"+p+"Место жительства")
+    print("Номер"+p+"ФИО Работника"+p+"Место жительства")
     data_len = len(data)
     addres_len = len(addres)
     i=0
     j=0
     while i < data_len and addres_len:
-        print(p,data[i], p,addres[j])
+        print(p+"-" * 50)
+        print(i+1,p,data[i], p,addres[j])
         i+=1
         j+=1
 
@@ -67,22 +68,30 @@ while True:
         print(p+"Работник устроен на работу")
         
     elif console_input == 2:
+        print("1 - введите если хотите удалить сотрудника по номеру в списке")
+        print("2 - введите если используя ввод ФИО")
+        console_input2 = int(input(p+"Введите номер команды"))
         
-        index = data.index(str(input("Введите того кого ищите: ")))
-        print(len(data))
-        print(index)
-        how_many_workers()
+        if console_input2 == 1:
+            how_many_workers()
+        #index = data.index(str(input("Введите того кого ищите: ")))
+        #print(len(data))
+        #print(index)
 
-        print("2")
+        elif console_input2 == 2:
+            index = data.index(str(input("Введите того кого ищите: ")))
+            del data[index]
+            print("Сотрудник был уволен")
        
     elif console_input == 3:
 
-        print(*data)
-        print(data)
+        how_many_workers()
+
+
+        #print(*data)
+        #print(data)
         
 
 
     else:
         print(p+"Ощибка, команды не существуюет")
-
- 
