@@ -30,15 +30,11 @@ dept = []
 def vjob():
 
     pre_data = str(input(p+"Введите имя сотрудника: "))
-    #pre_info = [(str(input(p+"Введите имя сотрудника: ")))]
     data.append(pre_data)
 
     pre_addres = str(input(p+"Введите Адрес места жительства сотрудника: "))
     addres.append(pre_addres)
 
-
-    #print(*data)
-    #print(*addres)
     return 0
 
 
@@ -61,7 +57,7 @@ def data_off_size():
         print(p+p+"ВНИМАНИЕ")
         print(p+"Список сотрудников ПУСТ!!!")
         print(p+"Для начала работы с Базой, заполните список сотрудников")
-        privet()
+        menu()
     else:
         return 0
 
@@ -90,9 +86,7 @@ def menu():
                 del data[b]
                 del addres[b]
                 print("Работник уволен.")
-        #index = data.index(str(input("Введите того кого ищите: ")))
-        #print(len(data))
-        #print(index)
+
 
             elif console_input2 == 2:
                 how_many_workers()
@@ -114,15 +108,9 @@ def menu():
 
             else:
                 how_many_workers()
-
-
-
-        #print(*data)
-        #print(data)
         
 
 
         else:
             print(p+"Ощибка, команды не существуюет.")
-            menu()
 menu()
