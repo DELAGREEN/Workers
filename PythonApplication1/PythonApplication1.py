@@ -55,53 +55,65 @@ def how_many_workers():
         i+=1
         j+=1
 
+def data_off_size():
+    a = len(data)
+    if a <= 0:
+        print(p+p+"ВНИМАНИЕ")
+        print(p+"Список сотрудников ПУСТ!!!")
+        print(p+"Для начала работы с Базой, заполните список сотрудников")
+        privet()
+    else:
+        return 0
 
-while True:
 
-    privet()
+def menu():
+    while True:
 
-    console_input = int(input(p+"Введите номер команды: "))
+        privet()
 
-    if console_input == 1:
-        vjob()
-        print(p+"Работник устроен на работу")
+        console_input = int(input(p+"Введите номер команды: "))
+
+        if console_input == 1:
+            vjob()
+            print(p+"Работник устроен на работу")
         
-    elif console_input == 2:
-        print(p+"1 - введите если хотите удалить сотрудника по номеру в списке")
-        print(p+"2 - введите если используя ввод ФИО")
-        console_input2 = int(input(p+"Введите номер команды: "))
+        elif console_input == 2:
+            print(p+"1 - введите если хотите удалить сотрудника по номеру в списке")
+            print(p+"2 - введите если используя ввод ФИО")
+            console_input2 = int(input(p+"Введите номер команды: "))
         
-        if console_input2 == 1:
-            how_many_workers()
-            i = int(input("Введите порядковый согласно таблице для увольнения работника: "))
-            b = i - 1
-            del data[b]
-            del addres[b]
-            print("Работник уволен.")
+            if console_input2 == 1:
+                data_off_size()
+                how_many_workers()
+                i = int(input("Введите порядковый согласно таблице для увольнения работника: "))
+                b = i - 1
+                del data[b]
+                del addres[b]
+                print("Работник уволен.")
         #index = data.index(str(input("Введите того кого ищите: ")))
         #print(len(data))
         #print(index)
 
-        elif console_input2 == 2:
-            index = data.index(str(input("Введите того кого хотите уволить: ")))
-            how_many_workers()
-            del data[index]
-            del addres[index]
-            print(p+"Сотрудник был уволен.")
-        else:
-           print(p+"Ощибка, команды не существует.")
+            elif console_input2 == 2:
+                how_many_workers()
+                index = data.index(str(input("Введите того кого хотите уволить: ")))
+                del data[index]
+                del addres[index]
+                print(p+"Сотрудник был уволен.")
+            else:
+                print(p+"Ощибка, команды не существует.")
      
 
-    elif console_input == 3:
-        a = len(data)
-        if a <= 0:
-            print(p+p+"ВНИМАНИЕ")
-            print(p+"Список сотрудников ПУСТ!!!")
-            print(p+"Для начала работы с Базой, заполните список сотрудников")
+        elif console_input == 3:
+            a = len(data)
+            if a <= 0:
+                print(p+p+"ВНИМАНИЕ")
+                print(p+"Список сотрудников ПУСТ!!!")
+                print(p+"Для начала работы с Базой, заполните список сотрудников")
         
 
-        else:
-            how_many_workers()
+            else:
+                how_many_workers()
 
 
 
@@ -110,5 +122,7 @@ while True:
         
 
 
-    else:
-        print(p+"Ощибка, команды не существуюет.")
+        else:
+            print(p+"Ощибка, команды не существуюет.")
+            menu()
+menu()
